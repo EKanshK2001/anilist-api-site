@@ -1,5 +1,6 @@
 
 // const resultDiv = document.getElementById('result');
+const name = document.getElementById('name');
 const description = document.getElementById('description');
 const age = document.getElementById('age');
 const bloodType = document.getElementById('bloodType');
@@ -70,6 +71,7 @@ async function fetchData() {
 
         // const myCharacterProperties = await response.json();
 
+        name.innerText = 'name : ' + character;
         description.innerText = 'description : ' + (JSON.stringify(characterProperties.description));
         age.innerText = 'age : ' + JSON.stringify(characterProperties.age);
         bloodType.innerText = 'blood type : ' + JSON.stringify(characterProperties.bloodType);
