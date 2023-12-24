@@ -1,5 +1,10 @@
 
-const resultDiv = document.getElementById('result');
+// const resultDiv = document.getElementById('result');
+const description = document.getElementById('description');
+const age = document.getElementById('age');
+const bloodType = document.getElementById('bloodType');
+const siteUrl = document.getElementById('siteUrl');
+const favourites = document.getElementById('favourites');
 
 // async function getInfo() {
 
@@ -65,7 +70,11 @@ async function fetchData() {
 
         // const myCharacterProperties = await response.json();
 
-        resultDiv.innerHTML = JSON.stringify(characterProperties);
+        description.innerText = 'description : ' + (JSON.stringify(characterProperties.description));
+        age.innerText = 'age : ' + JSON.stringify(characterProperties.age);
+        bloodType.innerText = 'blood type : ' + JSON.stringify(characterProperties.bloodType);
+        siteUrl.innerText = 'site URL : ' + JSON.stringify(characterProperties.siteUrl);
+        favourites.innerText = 'favorites : ' + JSON.stringify(characterProperties.favourites);
 
     } catch (error) {
         console.error(error);
