@@ -45,7 +45,7 @@ async function fetchData() {
         method: 'POST',
         url: 'https://anilist-graphql.p.rapidapi.com/',
         headers: {
-            'x-rapidapi-key': process.env.KEY,
+            'x-rapidapi-key': '',
             'x-rapidapi-host': 'anilist-graphql.p.rapidapi.com',
             'Content-Type': 'application/json'
         },
