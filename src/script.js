@@ -1,4 +1,3 @@
-require('dotenv').config();
 // const resultDiv = document.getElementById('result');
 const name = document.getElementById('name');
 const description = document.getElementById('description');

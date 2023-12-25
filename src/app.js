@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const cors = require('cors');
-const PORT = 8080;
+require('dotenv').config();
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -74,7 +75,7 @@ app.post('/characterSearch', (req, res) => {
 
 
 app.listen(PORT, () => {
-    console.log(`server is running on port ${PORT}`);
+    console.log(`server is running on port ${process.env.PORT}`);
 });
 
 
