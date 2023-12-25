@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 // const resultDiv = document.getElementById('result');
 const name = document.getElementById('name');
 const description = document.getElementById('description');
@@ -45,7 +45,7 @@ async function fetchData() {
         method: 'POST',
         url: 'https://anilist-graphql.p.rapidapi.com/',
         headers: {
-            'x-rapidapi-key': '2b7dad3861msh3c855ef1275cf78p1df61ajsn281baa842d1b',
+            'x-rapidapi-key': process.env.KEY,
             'x-rapidapi-host': 'anilist-graphql.p.rapidapi.com',
             'Content-Type': 'application/json'
         },
