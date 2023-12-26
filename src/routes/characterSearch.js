@@ -1,26 +1,31 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const { Router } = require('express');
 const axios = require('axios');
-const cors = require('cors');
 require('dotenv').config();
-
-const app = express();
-
-app.use(bodyParser.json());
-app.use(cors());
-
-app.get('/characterSearch', (req, res) => {
-
-    res.sendFile(__dirname + '/characterSearch.html');
+const router = Router();
+const path = require('path');
 
 
+
+
+
+// const bodyParser = require('body-parser');
+// const cors = require('cors');
+
+
+// router.use(bodyParser.json());
+// router.use(cors());
+
+router.get('/', (req, res) => {
+
+    const htmlFilePath = path.join(__dirname, '../characterSearch.html');
+    res.sendFile(htmlFilePath);
 });
 
 
-app.post('/characterSearch', (req, res) => {
+router.post('/', (req, res) => {
     
-    const character = req.query.character;
-    console.log("we got body as --> "+character);
+    const character = req.body.characterName;
+    console.log("we got body as --> "+ character);
     
     const query = `query Character {
         Character(search: "${character}") {
@@ -43,7 +48,7 @@ app.post('/characterSearch', (req, res) => {
         method: 'POST',
         url: 'https://anilist-graphql.p.rapidapi.com/',
         headers: {
-            'x-rapidapi-key': '',
+            'x-rapidapi-key': process.env.KEY,
             'x-rapidapi-host': 'anilist-graphql.p.rapidapi.com',
             'Content-Type': 'application/json'
         },
@@ -73,11 +78,7 @@ app.post('/characterSearch', (req, res) => {
     fetchData();
 })
 
-
-app.listen(PORT, () => {
-    console.log(`server is running on port ${process.env.PORT}`);
-});
-
+module.exports = router;
 
 
 
