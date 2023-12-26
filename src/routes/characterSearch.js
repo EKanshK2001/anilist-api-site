@@ -12,12 +12,12 @@ const path = require('path');
 // const cors = require('cors');
 
 
-// router.use(bodyParser.json());
+// router.use(bodyParser.urlencoded({ extended: true }));
 // router.use(cors());
 
 router.get('/', (req, res) => {
 
-    const htmlFilePath = path.join(__dirname, '../characterSearch.html');
+    const htmlFilePath = path.join(__dirname, '../../static', 'characterSearch.html');
     res.sendFile(htmlFilePath);
 });
 
