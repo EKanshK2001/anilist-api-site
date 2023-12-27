@@ -5,9 +5,13 @@ const characterSearchRouter = require("./src/routes/characterSearch");
 
 const app = express();
 
+//static files 
+app.use(express.static(__dirname + '/public'));
+
 // Middleware for parsing request bodies
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text()); 
+app.use(bodyParser.json());
 
 
 

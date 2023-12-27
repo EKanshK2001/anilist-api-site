@@ -5,28 +5,21 @@ const router = Router();
 const path = require('path');
 
 
-
-
-
-// const bodyParser = require('body-parser');
-// const cors = require('cors');
-
-
-// router.use(bodyParser.urlencoded({ extended: true }));
-// router.use(cors());
-
 router.get('/', (req, res) => {
 
-    const htmlFilePath = path.join(__dirname, '../../static', 'characterSearch.html');
+    const htmlFilePath = path.join(__dirname, '../../public/static', 'characterSearch.html');
     res.sendFile(htmlFilePath);
 });
 
 
 router.post('/', (req, res) => {
     
-    const character = req.body.characterName;
+    // const character = req.body.character;
+    const character = req.body;
     console.log("we got body as --> "+ character);
     
+    async function fetchData() {
+
     const query = `query Character {
         Character(search: "${character}") {
             id
@@ -58,7 +51,6 @@ router.post('/', (req, res) => {
     }
     
     
-    async function fetchData() {
     try {
             const response = await axios.request(options);
             const characterProperties = response.data.data.Character;           //.data.data. ik ugghh its wierd. took me an hour to find what was the error
@@ -68,6 +60,7 @@ router.post('/', (req, res) => {
 
             console.log(gender, age);
             res.json(characterProperties);
+            // return characterProperties;
 
         } catch (error) {
             console.error(error);
