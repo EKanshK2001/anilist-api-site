@@ -20,6 +20,21 @@ router.post('/', (req, res) => {
     
     async function fetchData() {
 
+    // const query = `query Character {
+    //     Character(search: "${character}") {
+    //         id
+    //         description
+    //         gender
+    //         age
+    //         bloodType
+    //         isFavourite
+    //         isFavouriteBlocked
+    //         siteUrl
+    //         updatedAt
+    //         favourites
+    //         modNotes
+    //     }
+    // }`;
     const query = `query Character {
         Character(search: "${character}") {
             id
@@ -33,8 +48,29 @@ router.post('/', (req, res) => {
             updatedAt
             favourites
             modNotes
+            image {
+                large
+                medium
+            }
+            dateOfBirth {
+                year
+                month
+                day
+            }
+            name {
+                first
+                middle
+                last
+                full
+                native
+                alternative
+                alternativeSpoiler
+                userPreferred
+            }
         }
-    }`;
+    }
+    
+    `;
     
     
     const options = {

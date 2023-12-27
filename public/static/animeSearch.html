@@ -5,34 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link type="text/css" rel="stylesheet" href="/views/characterSearch.css"> 
+    <link type="text/css" rel="stylesheet" href="/views/animeSearch.css"> 
     <!-- <link type="text/css" rel="stylesheet" href="../views/style.css"> -->
     <title>character search</title>
 </head>
 <body>
     <!-- <form class = "basic-form" action="/characterSearch" method="post"> -->
-    <form class = "basic-form pack" id="myForm">
-        <label for="character">Character : </label>
-        <input class = "variables" id="character" name = 'characterName' type="text">
-        <button class = "bih-ass-btn" type = "submit">get info</button>
+    <form class = "basic-form" id="myForm">
+        <div class="pack">
+            <label for="character">Character : </label>
+            <input class = "variables" id="character" name = 'characterName' type="text">
+            <button onclick="fetchData()" class = "bih-ass-btn" type = "submit" >get info</button>
+        </div>
     </form>
     
     <!-- <div id="result"></div> -->
-    <!-- <p id = "name" class="text-box text-justify">saber</p>
+    <p id = "name" class="text-box text-justify">saber</p>
     <p id = "description" class="text-box text-justify">"__Height:__ 154 cm \n\nArtoria Pendragon, better known as Arthur Pendragon and King Arthur, is regarded as a male in history but it's actually a woman. She is the \"Once and Future King\" and a legendary hero of Britain known as the King of Knights (騎士王, Kishi-Ō). She used to wield the sword from the stone, Caliburn, but it was eventually destroyed and the Lady of the Lake gifted her with Excalibur and Avalon.\n\n__In Fate/Prototype:__ ~!He is presented as male instead, conserving his original name of Arthur Pendragon. Also called Prototype Saber, he is the Saber-class Servant under the control of [Ayaka Sajyou](https://anilist.co/character/54223).!~\n\n__In Fate/stay night:__ ~!Saber is summoned in the Fifth Holy Grail War as the Servant of [Shirou Emiya](https://anilist.co/character/496). Shirou had been having dreams of Excalibur in the days leading up to the start of the Holy Grail War after receiving his Command Spells and, while stumbling in his shed during his escape from [Lancer](https://anilist.co/character/499), Avalon, hidden inside him, reacts to the traces of a magic circle and summons Artoria as his Servant.!~\n\n__In Fate/stay night: Heaven's Feel:__ ~! Corrupted by [Angra Mainyu](https://anilist.co/character/120855), Artoria is vastly different from her normal self. She is also called Saber Alter/Black Saber. The results of her alteration is not only within Artoria's interior but also extends to her outward appearance. The color of her skin becomes pale, and the pupil of her eyes that were at first concealed behind a black visor during the moment of her summoning becomes golden from her original green eye color as well. Because the armor she wears was dyed jet black and grew in weight due to changing into a heavier armor, its power has increased more than normally.!~\n\n __In Fate/Zero:__ ~!Saber is summoned by [Kiritsugu Emiya](https://anilist.co/character/10010) to participate in the Fourth Holy Grail War on behalf of [Jubstacheit von Einzbern](https://anilist.co/character/16027) and the Einzbern family. Kiritsugu partners Saber with [Irisviel von Einzbern](https://anilist.co/character/15164), to act as Saber's Master in the open while he acts from behind to win with his own methods. On the final day of the Holy Grail war, Saber found the Holy Grail but she also meets [Gilgamesh](https://anilist.co/character/2514) who was waiting for her. He proposes that she becomes his wife while she lays defeated in front of him. Saber refuses as the Holy Grail is just in front of her. Saber destroyed the Holy Grail in the fourth Holy Grail War because Kiritsugu used multiple command seals in order to force her to act against her will. However, she only managed to destroy the Grail's physical form. She was also caught in her own Excalibur blast, sending her back to the battlefield of Camlann. She was the sixth and final servant to perish in the fourth Holy Grail War.!~ \n\n__In Fate/Grand Order - First Order:__ ~! She remains the corrupted version, known as Saber Alter.!~\n\n__In Fate/Grand Order Camelot__ ~!The being called Goddess Rhongomyniad came into existence in the world that [Bedivere](https://anilist.co/character/8941), due to the wish of wanting his King to not perish after the battle of Camlainn, refused to throw Excalibur back into the Lake even after the third time.!~\n\n__In Fate/Grand Order Avalon le Fae:__ ~!She is a fairy created by the planet itself to be Lostbelt Britain's savior after the previous Child of Prophecy, [Tonelico](https://anilist.co/character/239533), failed. She knows her destiny but is afraid to face it and wishes that she was not the Child of Prophecy. Even though she is the Child of Prophecy, Artoria’s magical energy is lower than the average fairy. When Artoria reaches third Ascension, she can use numerous treasured swords as catalysts for magecraft.!~"</p>
     <p id = "age" class="text-box text-justify">"35 "</p>
     <p id = "bloodType" class="text-box text-justify">null</p>
     <p id = "siteUrl" class="text-box text-justify">"https://anilist.co/character/497"</p>
-    <p id = "favourites" class="text-box text-justify">9443</p> -->
+    <p id = "favourites" class="text-box text-justify">9443</p>
 
-    <div id = "name" class="text-box"></div>
-    <div id = "description" class="text-box"></div>
-    <div id = "age" class="text-box"></div>
-    <!-- <div id = "bloodType" class="text-box"></div> -->
-    <div id = "siteUrl" class="text-box"></div>
-    <div id = "favourites" class="text-box"></div>
+    <p id = "name" class="text-box text-justify"></p>
+    <p id = "description" class="text-box text-justify"></p>
+    <p id = "age" class="text-box text-justify"></p>
+    <p id = "bloodType" class="text-box text-justify"></p>
+    <p id = "siteUrl" class="text-box text-justify"></p>
+    <p id = "favourites" class="text-box text-justify"></p>
 
-    <script src="/views/characterSearchScript.js"></script>
+    <script src="/views/animeSearchScript.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 
     

@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const characterSearchRouter = require("./src/routes/characterSearch");
+const characterSearchRouter = require("./src/routes/characterSearchRoute");
 // const userRouter = require("./routes/user");
 
 const app = express();
