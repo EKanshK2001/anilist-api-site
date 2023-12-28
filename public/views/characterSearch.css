@@ -21,7 +21,7 @@ body{
 
 .pack{
     display: flex;
-    padding: 25px;
+    padding: 20px 20px;
     align-items: center;
     justify-content: space-around;
     width: 90vw;
@@ -30,7 +30,11 @@ body{
     margin: 20px 0px;
 }
 
-.pack .variables{
+.pack .search-bar {
+    width: 20%;
+}
+
+.pack .search-bar{
     width: 60%;
     padding: 8px 15px;
     font-size: 1.5rem;
@@ -43,7 +47,7 @@ body{
     padding: 8px 15px;
     font-size: 1.5rem;
     border-radius: 7px;
-    width: 200px;
+    width: 20%;
     font-weight: bold;
 }
 
@@ -52,9 +56,16 @@ body{
     font-size: 1rem;
     color: white;
     /* font-weight: bold; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 3px solid white;
     border-radius: 12px;
-    width: 90vw;
+    width: 90%;
     margin: 15px 0px;
 }
 
+.character-image {
+    width: 50vw;
+}

@@ -41,13 +41,8 @@ router.post('/', (req, res) => {
             description
             gender
             age
-            bloodType
-            isFavourite
-            isFavouriteBlocked
             siteUrl
-            updatedAt
             favourites
-            modNotes
             image {
                 large
                 medium
@@ -64,7 +59,6 @@ router.post('/', (req, res) => {
                 full
                 native
                 alternative
-                alternativeSpoiler
                 userPreferred
             }
         }
@@ -94,7 +88,8 @@ router.post('/', (req, res) => {
             const gender = characterProperties.gender;     
             const age = characterProperties.age;
 
-            console.log(gender, age);
+            // console.log(gender, age);
+            console.log(characterProperties);
             res.json(characterProperties);
             // return characterProperties;
 
