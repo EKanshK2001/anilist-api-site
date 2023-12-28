@@ -58,6 +58,16 @@ function createDiv(data, id) {
 
     return div;
 }
+function createUrlDiv(url, id) {
+    const a = document.createElement('a');
+    a.setAttribute('id', id);
+    a.setAttribute('href', url);
+    a.classList.add('text-box');
+
+    a.innerText = url;
+
+    return a;
+}
 
 function createImg(link, id) {
     const characterImage = document.createElement('img');
@@ -216,7 +226,7 @@ async function fetchData() {
             const ageDiv = createDiv(age, '_age');
             const genderDiv = createDiv(gender, '_gender');
             const favouritesDiv = createDiv(favourites, '_favourites');
-            const siteUrlDiv = createDiv(siteUrl, '_siteUrl');
+            const siteUrlDiv = createUrlDiv(siteUrl, '_siteUrl');
             const descriptionDiv = createDiv(description, '_description');
 
             const wrapArr = [ageDiv, genderDiv, favouritesDiv, siteUrlDiv, descriptionDiv];
