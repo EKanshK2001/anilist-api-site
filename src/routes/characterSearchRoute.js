@@ -88,8 +88,8 @@ router.post('/', (req, res) => {
             const gender = characterProperties.gender;     
             const age = characterProperties.age;
 
-            // console.log(gender, age);
-            console.log(characterProperties);
+            console.log(gender, age);
+            // console.log(characterProperties);
             res.json(characterProperties);
             // return characterProperties;
 

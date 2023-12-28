@@ -10,10 +10,12 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('myForm');
+    const getInfoBtn = document.getElementById('getInfoBtn');
 
-    form.addEventListener('submit', async function (event) {
+    getInfoBtn.addEventListener('click', async function (event) {
         event.preventDefault(); // Prevent the default form submission
+        const main = document.getElementById('main');
+        main.innerHTML = '';
         fetchData();
         // Your form submission logic...
     });
@@ -196,7 +198,7 @@ async function fetchData() {
                 
             //     // }
 
-            
+
             //NEED FLOW CONTROL OVER HERE TO CHECK FOR NULL VALUES FIRST
 
 
